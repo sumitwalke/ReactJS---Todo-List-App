@@ -1,17 +1,13 @@
 import React from 'react'
 import TodoCard from './TodoCard'
 
-function TodoList() {
-  let todos = [
-    'Go to the gym',
-    'Eat more fruits and vege',
-    'Pick up the kids from the school'
-  ]
+function TodoList(props) {
+  const {todos, handleDeleteTodo, handleEditTodo} = props
   return (
     <div>
       {todos.map((todo, todoIndex)=>{
         return (
-          <TodoCard key={todoIndex}>
+          <TodoCard handleDeleteTodo= {handleDeleteTodo} handleEditTodo={handleEditTodo} index={todoIndex} key={todoIndex}>
             <p>{todo}</p>
           </TodoCard>
         )
